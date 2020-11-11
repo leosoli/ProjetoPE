@@ -15,3 +15,25 @@ Entrada:	kc_house_data.csv
 Saídas:		CasasTop.csv
 		autoavaliacao.csv
 '''
+
+import pandas as pd
+
+# Carregando arquivo com todas as casas originalmente existentes
+data = pd.read_csv('kc_house_data.csv', sep=',')
+
+# Filtrando dados para apenas as casas pertencentes ao zipcode 98055
+data_98055 = data.query("zipcode==98055")
+data_98055 = data_98055.reset_index(drop=True)
+
+# Adicionado coluna com o preço por pé quadrado
+data_98055['price_sqft_living'] = data_98055['price']/data_98055['sqft_living']
+
+# Média do preço por pé quadrado arredondada na 2ª casa decimal
+media = round(data_98055['price_sqft_living'].mean(), 2)
+
+# Adicionando coluna 'Caro??', com 1 sendo verdadeiro e 0 caso contrário
+data_98055['Caro??'] = data_98055['price_sqft_living'] > media
+data_98055['Caro??'] = data_98055['Caro??'].replace([False, True], [0, 1])
+
+# Eliminando a coluna de preço por pé quadrado
+data_98055 = data_98055.drop(['price_sqft_living'], axis = 1)
