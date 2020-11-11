@@ -54,3 +54,11 @@ print('Tabela para autoavaliacao do chatbot')
 print("-------------------------------------------------------------------------------------")
 print(autoavaliacao)
 print()
+
+# Exportando os dados das casas para processo de construção do chatbot como 'CasasTop.csv'
+data_98055.to_csv(r'CasasTop.csv', index=False)
+print('Arquivo CasasTop.csv gerado.')
+
+# Exportando as 10 casas para serem usadas na autoavaliação do chatbot
+autoavaliacao.to_csv(r'autoavaliacao.csv', index=False)
+print('Arquivo autoavaliacao.csv gerado.')
