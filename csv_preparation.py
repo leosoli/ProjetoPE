@@ -37,3 +37,20 @@ data_98055['Caro??'] = data_98055['Caro??'].replace([False, True], [0, 1])
 
 # Eliminando a coluna de preço por pé quadrado
 data_98055 = data_98055.drop(['price_sqft_living'], axis = 1)
+
+# Separando as 10 últimas linhas para usar como autoavaliação ao final do desenvolvimento do chatbot
+autoavaliacao = data_98055.tail(10)
+
+# Eliminando as 10 ultimas linhas para não serem mais usadas durante a criação do chatbot
+data_98055 = data_98055[:-10]
+
+# Impressão das tabelas
+print("\n-------------------------------------------------------------------------------------")
+print('Tabela para construcao do chatbot')
+print("-------------------------------------------------------------------------------------")
+print(data_98055)
+print("\n-------------------------------------------------------------------------------------")
+print('Tabela para autoavaliacao do chatbot')
+print("-------------------------------------------------------------------------------------")
+print(autoavaliacao)
+print()
