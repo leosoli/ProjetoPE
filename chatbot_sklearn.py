@@ -27,7 +27,7 @@ decision_tree = tree.DecisionTreeClassifier(max_depth = 20)
 decision_tree.fit(x_train, y_train)
 
 #Escrevendo o arquivo
-with open("tree_chatbot2.dot", 'w') as f:
+with open("tree_chatbot.dot", 'w') as f:
      f = tree.export_graphviz(decision_tree,
                               out_file=f,
                               max_depth = 20,
