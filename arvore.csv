@@ -1,0 +1,135 @@
+﻿ID;Pergunta;A;Nó A;B;Nó B
+1;Tem 2 ou menos Banheiros?;Sim;2;Não;85
+2;Tem 2 ou menos quartos?;Sim;3;Nã0;28
+3;Tem somente 1 quarto?;Sim;4;Não;5
+4;NÓ FOLHA;Altas Chances de Ser Caro;;;
+5;Tem uma nota de Design 5 ou menor?;Sim;6;Não;9
+6;Tem somente 1 andar?;Sim;7;Não;8
+7;NÓ FOLHA;Chances Medias de ser Barato;;;
+8;NÓ FOLHA;Chances Medias de ser Caro;;;
+9;Tem 1 banheiro com pelo menos 3 toilets?;Sim;10;Não;27
+10;Tem somente 1 andar?;Sim;11;Não;26
+11;Tem uma nota de Condição 4 ou menor?;Sim;12;Não;25
+12;Tem uma nota de Vista 1 ou menor?;Sim;13;Não;24
+13;Tem 1 banheiro com pelo menos 1 toilet?;Sim;14;Não;21
+14;Tem uma nota de Condição 3 ou menor?;Sim;15;Não;18
+15;Tem uma nota de Design 6 ou menor?;Sim;16;Não;17
+16;NÓ FOLHA;Altas Chances de Ser Caro;;;
+17;NÓ FOLHA;Chances Medias de ser Caro;;;
+18;Tem uma nota de Design 6 ou menor?;Sim;19;Não;20
+19;NÓ FOLHA;Chances Medias de ser Caro;;;
+20;NÓ FOLHA;Chances Medias de ser Caro;;;
+21;Tem uma nota de Design 6 ou menor?;Sim;22;Não;23
+22;NÓ FOLHA;Chances Medias de ser Barato;;;
+23;NÓ FOLHA;Chances Medias de ser Caro;;;
+24;NÓ FOLHA;Chances Medias de ser Caro;;;
+25;NÓ FOLHA;Chances Medias de ser Caro;;;
+26;NÓ FOLHA;Altas Chances de Ser Caro;;;
+27;NÓ FOLHA;Altas Chances de Ser Caro;;;
+28;Tem uma nota de Condição 4 ou menor?;Sim;29;Não;80
+29;Tem 3 ou menos quartos?;Sim;30;Não;59
+30;Tem somente 1 andar?;Sim;31;Não;56
+31;Tem uma nota de Design 7 ou menor?;Sim;32;Não;55
+32;Tem uma nota de Vista 0?;Sim;33;Não;54
+33;Tem 1 banheiro com pelo menos 3 toilets?;Sim;34;Não;53
+34;Tem uma nota de Condição 3 ou menor?;Sim;35;Não;44
+35;Tem 1 banheiro com pelo menos 1 toilet?;Sim;36;Não;41
+36;Tem pelo menos 3 toilets?;Sim;37;Não;38
+37;NÓ FOLHA;Chances Medias de ser Barato;;;
+38;Tem uma nota de Design 6 ou menor?;Sim;39;Não;40
+39;NÓ FOLHA;Chances Medias de ser Caro;;;
+40;NÓ FOLHA;Chances de ser o preço do Mercado;;;
+41;Tem 1 banheiro com pelo menos 2 toilets?;Sim;42;Não;43
+42;NÓ FOLHA;Chances Medias de ser Barato;;;
+43;NÓ FOLHA;Altas Chances de Ser Barato;;;
+44;Tem uma nota de Design 6 ou menor?;Sim;45;Não;48
+45;Tem 1 banheiro com pelo menos 2 toilets?;Sim;46;Não;47
+46;NÓ FOLHA;Chances Medias de ser Caro;;;
+47;NÓ FOLHA;Chances Medias de ser Barato;;;
+48;Tem 1 banheiro com pelo menos 3 toilets?;Sim;49;Não;52
+49;Tem 1 banheiro com pelo menos 1 toilet?;Sim;50;Não;51
+50;NÓ FOLHA;Chances Medias de ser Caro;;;
+51;NÓ FOLHA;Altas Chances de Ser Caro;;;
+52;NÓ FOLHA;Chances Medias de ser Caro;;;
+53;NÓ FOLHA;Altas Chances de Ser Barato;;;
+54;NÓ FOLHA;Chances Medias de ser Caro;;;
+55;NÓ FOLHA;Altas Chances de Ser Caro;;;
+56;Tem 1 banheiro com pelo menos 3 toilets?;Sim;57;Não;58
+57;NÓ FOLHA;Altas Chances de Ser Barato;;;
+58;NÓ FOLHA;Chances Medias de ser Caro;;;
+59;Tem 1 banheiro com pelo menos 2 toilets?;Sim;60;Não;71
+60;Tem uma nota de Design 5 ou menor?;Sim;61;Não;62
+61;NÓ FOLHA;Altas Chances de Ser Barato;;;
+62;Tem 1 banheiro com pelo menos 1 toilet?;Sim;63;Não;70
+63;Tem uma nota de Design 6 ou menor?;Sim;64;Não;67
+64;Tem uma nota de Condição 3 ou menor?;Sim;65;Não;66
+65;NÓ FOLHA;Chances de ser o preço do Mercado;;;
+66;NÓ FOLHA;Chances Medias de ser Caro;;;
+67;Tem uma nota de Condição 3 ou menor?;Sim;68;Não;69
+68;NÓ FOLHA;Chances Medias de ser Barato;;;
+69;NÓ FOLHA;Chances Medias de ser Barato;;;
+70;NÓ FOLHA;Chances Medias de ser Caro;;;
+71;Tem uma nota de Condição 3 ou menor?;Sim;72;Não;73
+72;NÓ FOLHA;Altas Chances de Ser Barato;;;
+73;Tem uma nota de Design 7 ou menor?;Sim;74;Não;79
+74;Tem 1 banheiro com pelo menos 3 toilets?;Sim;75;Não;76
+75;NÓ FOLHA;Altas Chances de Ser Barato;;;
+76;Tem somente 1 andar com sotão/porão?;Sim;77;Não;78
+77;NÓ FOLHA;Chances de ser o preço do Mercado;;;
+78;NÓ FOLHA;Chances Medias de ser Barato;;;
+79;NÓ FOLHA;Chances Medias de ser Caro;;;
+80;Tem somente 1 andar?;Sim;81;Não;82
+81;NÓ FOLHA;Altas Chances de Ser Caro;;;
+82;Tem 3 ou menos quartos?;Sim;83;Não;84
+83;NÓ FOLHA;Chances Medias de ser Barato;;;
+84;NÓ FOLHA;Chances Medias de ser Caro;;;
+85;Tem 2 banheiros com pelo menos 3 toilets?;Sim;86;Não;129
+86;Tem 4 ou menos quartos?;Sim;87;Não;128
+87;Tem somente 1 andar?;Sim;88;Não;109
+88;Tem uma nota de Condição 4 ou menor?;Sim;89;Não;108
+89;Tem 3 ou menos quartos?;Sim;90;Não;105
+90;Tem 2 ou menos quartos?;Sim;91;Não;92
+91;NÓ FOLHA;Chances Medias de ser Barato;;;
+92;Tem uma nota de Design 7 ou menor?;Sim;93;Não;100
+93;Tem uma nota de Condição 3 ou menor?;Sim;94;Não;97
+94;Tem 2 banheiros com pelo menos 1 toilet?;Sim;95;Não;96
+95;NÓ FOLHA;Chances Medias de ser Barato;;;
+96;NÓ FOLHA;Chances Medias de ser Caro;;;
+97;Tem 2 banheiros com pelo menos 1 toilet?;Sim;98;Não;99
+98;NÓ FOLHA;Altas Chances de Ser Caro;;;
+99;NÓ FOLHA;Chances Medias de ser Barato;;;
+100;Tem uma nota de Condição 3 ou menor?;Sim;101;Não;102
+101;NÓ FOLHA;Chances Medias de ser Barato;;;
+102;Tem uma nota de Design 8 ou menor?;Sim;103;Não;104
+103;NÓ FOLHA;Chances Medias de ser Barato;;;
+104;NÓ FOLHA;Chances Medias de ser Caro;;;
+105;Tem 2 banheiros com pelo menos 2 toilets?;Sim;106;Não;107
+106;NÓ FOLHA;Altas Chances de Ser Barato;;;
+107;NÓ FOLHA;Chances Medias de ser Caro;;;
+108;NÓ FOLHA;Chances Medias de ser Caro;;;
+109;Tem 2 banheiros com pelo menos 1 toilet?;Sim;110;Não;111
+110;NÓ FOLHA;Altas Chances de Ser Barato;;;
+111;Tem uma nota de Design 6 ou menor?;Sim;112;Não;113
+112;NÓ FOLHA;Chances Medias de ser Barato;;;
+113;Tem uma nota de Design 7 ou menor?;Sim;114;Não;117
+114;Tem 2 ou menos quartos?;Sim;115;Não;116
+115;NÓ FOLHA;Chances Medias de ser Barato;;;
+116;NÓ FOLHA;Chances Medias de ser Barato;;;
+117;Tem uma nota de Condição 3 ou menor?;Sim;118;Não;127
+118;Tem 2 ou menos quartos?;Sim;119;Não;120
+119;NÓ FOLHA;Chances Medias de ser Barato;;;
+120;Tem uma nota de Design 8 ou menor?;Sim;121;Não;124
+121;Tem 3 ou menos quartos?;Sim;122;Não;123
+122;NÓ FOLHA;Altas Chances de Ser Barato;;;
+123;NÓ FOLHA;Altas Chances de Ser Barato;;;
+124;Tem 3 ou menos quartos?;Sim;125;Não;126
+125;NÓ FOLHA;Altas Chances de Ser Barato;;;
+126;NÓ FOLHA;Chances de ser o preço do Mercado;;;
+127;NÓ FOLHA;Chances Medias de ser Barato;;;
+128;NÓ FOLHA;Altas Chances de Ser Barato;;;
+129;Tem 3 banheiros com pelo menos 3 toilets?;Sim;130;Não;131
+130;NÓ FOLHA;Altas Chances de Ser Barato;;;
+131;Tem 5 ou menos quartos?;Sim;132;Não;133
+132;NÓ FOLHA;Chances Medias de ser Caro;;;
+133;NÓ FOLHA;Chances Medias de ser Barato;;;
+;;;;;
