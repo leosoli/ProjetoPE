@@ -101,11 +101,11 @@ cd ProjetoPE
 Após isso, basta digitar o comando a seguir para iniciar o *chatbot*:
 
 ```bash
-> py chatbot_maker.py
+py chatbot_maker.py
 ```
 ou
 ```bash
-> python chatbot_maker.py
+python chatbot_maker.py
 ```
 
 Será exibida a seguinte mensagem:
