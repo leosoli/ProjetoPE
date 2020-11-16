@@ -1,0 +1,11 @@
+﻿bedrooms,bathrooms,floors,waterfront,view,condition,grade,Caro??,Resultado
+3,2.5,2,0,0,3,8,1,ERROU
+4,2.5,2,0,0,3,8,0,ACERTOU
+4,2.5,2,0,0,3,8,1,ERROU
+4,2.5,2,0,0,3,8,0,ACERTOU
+4,2.5,2,0,0,3,9,0,ERROU
+4,3.5,2,0,3,3,9,0,ACERTOU
+5,3.5,2,0,0,3,9,0,ACERTOU
+4,2.5,2,0,0,3,8,0,ACERTOU
+4,2.5,2,0,0,3,8,0,ACERTOU
+4,3.5,2,0,0,3,8,0,ACERTOU
