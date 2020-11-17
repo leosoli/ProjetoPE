@@ -12,6 +12,7 @@ Este projeto consiste na criação de um *chatbot* para predição das chances d
     - [**Bilioteca Scikit-learn em Python para criação de árvores de decisão**](#bilioteca-scikit-learn-em-python-para-criação-de-árvores-de-decisão)
     - [**Implementação do chatbot a partir de uma árvore de decisão**](#implementação-do-chatbot-a-partir-de-uma-árvore-de-decisão)
   - [**Descrição da implementação**](#descrição-da-implementação)
+    - [**Preparação do banco de dados**](#preparação-do-banco-de-dados)
   - [**Como rodar o chatbot**](#como-rodar-o-chatbot)
 
 
@@ -86,6 +87,56 @@ A versão modificada para o trabalho presente encontra-se neste repositório, so
 > O arquivo [arvore.csv](https://github.com/guigasalim/ProjetoPE/blob/main/arvore.csv) deve ser modificado levando em conta as alterações promovidas ao arquivo [tree_chatbot.dot](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.dot).
 
 
+### **Preparação do banco de dados**
+
+No arquivo [csv_preparation.py](https://github.com/guigasalim/ProjetoPE/blob/main/csv_preparation.py), inicia-se a preparação do arquivo de entrada para a geração da árvore de decisão a partir do script a seguir:
+
+```py
+data = pd.read_csv('kc_house_data.csv', sep=',')
+```
+Vale lembrar que **kc_house_data.csv** possui os dados de todas as casas vendidas no Condado de King.
+
+Após isso, os dados devem ser filtrados para o *ZIP Code* desejado (98055, neste caso) e uma nova coluna com 1s e 0s que determinam se o preço da residência está acima ou abaixo, respectivamente, do preço médio por pé quadrado, como segue abaixo: 
+
+```py
+# Filtrando dados para apenas as casas pertencentes ao zipcode 98055
+data_98055 = data.query("zipcode==98055")
+data_98055 = data_98055.reset_index(drop=True)
+
+# Adicionado coluna com o preço por pé quadrado
+data_98055['price_sqft_living'] = data_98055['price']/data_98055['sqft_living']
+
+# Média do preço por pé quadrado arredondada na 2ª casa decimal
+media = round(data_98055['price_sqft_living'].mean(), 2)
+
+# Adicionando coluna 'Caro??', com 1 sendo verdadeiro e 0 caso contrário
+data_98055['Caro??'] = data_98055['price_sqft_living'] > media
+data_98055['Caro??'] = data_98055['Caro??'].replace([False, True], [0, 1])
+
+# Eliminando a coluna de preço por pé quadrado
+data_98055 = data_98055.drop(['price_sqft_living'], axis = 1)
+```
+
+A seguir, a base de dados é dividida em 2 arquivos:
+
+- **'autoavaliacao.csv':** as 10 últimas casas, para serem usadas na autoavaliação do chatbot;
+- **'CasasTop.csv':** os restantes das casas, para processo de construção do chatbot.
+
+```py
+# Separando as 10 últimas linhas para usar como autoavaliação ao final do desenvolvimento do chatbot
+autoavaliacao = data_98055.tail(10)
+
+# Eliminando as 10 ultimas linhas para não serem mais usadas durante a criação do chatbot
+data_98055 = data_98055[:-10]
+
+# Exportando os dados das casas para processo de construção do chatbot como 'CasasTop.csv'
+data_98055.to_csv(r'CasasTop.csv', index=False)
+
+# Exportando as 10 casas para serem usadas na autoavaliação do chatbot
+autoavaliacao.to_csv(r'autoavaliacao.csv', index=False)
+```
+
+
 ## **Como rodar o chatbot**
 
 > Para rodar o *chatbot*, bastam os arquivos **arvore.csv** e **chatbot_maker.py**.
@@ -116,3 +167,4 @@ Escolha uma das opções abaixo:
 1 para Sim
 2 para Não
 ```
+
