@@ -29,7 +29,10 @@ No geral, podemos definir os seguintes pontos importantes para o desenvolvimento
 
 ### **Localização de estudo**
 
+<div align="center">
+
 #### **CONDADO DE KING (*KING COUNTY*), WA, EUA**
+</div>
 
 <div align="center">
 
@@ -41,7 +44,10 @@ No geral, podemos definir os seguintes pontos importantes para o desenvolvimento
 
 O Condado de King (King County, em inglês) é um dos 39 condados do estado americano de Washington, cuja maior cidade é Seattle.
 
+<div align="center">
+
 #### **RENTON, CONDADO DE KING**
+</div>
 
 <div align="center">
 
@@ -53,9 +59,12 @@ O Condado de King (King County, em inglês) é um dos 39 condados do estado amer
 
 Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de Seattle. Situa-se a 18 km ao sudeste do centro de Seattle. Possui áreas com *ZIP Codes* de 98055 a 98059.
 
+<div align="center">
+
 #### **ZIP CODE 98055**
+</div>
 
-
+<!---
 
 <div align="center">
 
@@ -65,7 +74,7 @@ Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de 
 
 </div>
 
-
+-->
 
 ### **Banco de dados das casas do condado de King, WA, EUA**
 
@@ -198,7 +207,21 @@ with open("tree_chatbot.dot", 'w') as f:
                               filled= True )
 ```
 
-Com o arquivo .DOT do fluxograma da árvore de decisão definido, pode-se seguir para as próximas etapas da elaboração do *chatbot*.
+Com o arquivo .DOT (10 primeiras linhas abaixo) do fluxograma da árvore de decisão definido, pode-se seguir para as próximas etapas da elaboração do *chatbot*.
+
+```
+digraph Tree {
+node [shape=box, style="filled, rounded", color="black", fontname=helvetica] ;
+edge [fontname=helvetica] ;
+0 [label="yr_built <= 2002.5\ngini = 0.49\nsamples = 257\nvalue = [147, 110]\nclass = False", fillcolor="#f8dfcd"] ;
+1 [label="bedrooms <= 3.5\ngini = 0.5\nsamples = 222\nvalue = [114, 108]\nclass = False", fillcolor="#fef8f5"] ;
+0 -> 1 [labeldistance=2.5, labelangle=45, headlabel="True"] ;
+2 [label="bedrooms <= 2.5\ngini = 0.487\nsamples = 155\nvalue = [65, 90]\nclass = True", fillcolor="#c8e4f8"] ;
+1 -> 2 ;
+3 [label="bathrooms <= 2.125\ngini = 0.395\nsamples = 48\nvalue = [13, 35]\nclass = True", fillcolor="#83c1ef"] ;
+2 -> 3 ;
+...
+```
 
 ## **Como rodar o chatbot**
 
@@ -229,5 +252,26 @@ Escolha uma das opções abaixo:
 0 para sair
 1 para Sim
 2 para Não
+
+Tem 2 ou menos Banheiros?
 ```
 
+Será então exibida uma série de perguntas a respeito das características da casa a ser considerada. Quando o *chatbot* encontrar uma solução baseada em sua árvore de decisão (arquivo **'arvore.csv'**), exibirá uma mensagem como:
+
+```bash
+Altas Chances de Ser Caro
+```
+
+que pode ser do tipo:
+
+- Altas Chances de Ser Barato
+- Chances Medias de ser Barato
+- Chances de ser o preço do Mercado
+- Chances Medias de ser Caro
+- Altas Chances de Ser Caro
+
+A seguir, o *chatbot* é reiniciado, sendo possível encerrar sua execução a qualquer momento usando a opção:
+
+```bash
+0 para sair
+```
