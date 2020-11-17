@@ -13,6 +13,7 @@ Este projeto consiste na criação de um *chatbot* para predição das chances d
     - [**Implementação do chatbot a partir de uma árvore de decisão**](#implementação-do-chatbot-a-partir-de-uma-árvore-de-decisão)
   - [**Descrição da implementação**](#descrição-da-implementação)
     - [**Preparação do banco de dados**](#preparação-do-banco-de-dados)
+    - [**Geração da árvore de decisão**](#geração-da-árvore-de-decisão)
   - [**Como rodar o chatbot**](#como-rodar-o-chatbot)
 
 
@@ -30,38 +31,40 @@ No geral, podemos definir os seguintes pontos importantes para o desenvolvimento
 
 #### **CONDADO DE KING (*KING COUNTY*), WA, EUA**
 
-<center>
+<div align="center">
 
 | [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/6/6d/Map_of_Washington_highlighting_King_County.svg/5936px-Map_of_Washington_highlighting_King_County.svg.png" alt="KingCountyInWA" width="300"/>](https://en.wikipedia.org/wiki/King_County,_Washington) | [ <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/3/30/Washington_in_United_States.svg/1181px-Washington_in_United_States.svg.png" alt="WAinUSA" width="300"/>](https://en.wikipedia.org/wiki/Washington_(state))  |
 |:---:|:---:|
 | Localização do Condado de King, WA, EUA | Localização do Estado de Washington, EUA |
 
-</center>
+</div>
 
 O Condado de King (King County, em inglês) é um dos 39 condados do estado americano de Washington, cuja maior cidade é Seattle.
 
 #### **RENTON, CONDADO DE KING**
 
-<center>
+<div align="center">
 
 | [<img src="https://upload.wikimedia.org/wikipedia/commons/thumb/a/a9/King_County_Washington_Incorporated_and_Unincorporated_areas_Renton_Highlighted.svg/1250px-King_County_Washington_Incorporated_and_Unincorporated_areas_Renton_Highlighted.svg.png" alt="RentoninKingCounty" width="500"/>](https://en.wikipedia.org/wiki/Renton,_Washington) |
 |:---:|
 | Localização da cidade de Renton dentro do Condado de King, à esquerda |
 
-</center>
+</div>
 
 Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de Seattle. Situa-se a 18 km ao sudeste do centro de Seattle. Possui áreas com *ZIP Codes* de 98055 a 98059.
 
 #### **ZIP CODE 98055**
 
 
-<center>
+
+<div align="center">
 
 | [<img src="https://images.geodatadirect.com/api/images/GetCoverageImages?Id=45898" alt="zipcode98055" width="500"/>](https://www.unitedstateszipcodes.org/98055/) |
 |:---:|
 | Em destaque, localização da região incorporada ao ZIP Code 98055 |
 
-</center>
+</div>
+
 
 
 ### **Banco de dados das casas do condado de King, WA, EUA**
@@ -136,6 +139,66 @@ data_98055.to_csv(r'CasasTop.csv', index=False)
 autoavaliacao.to_csv(r'autoavaliacao.csv', index=False)
 ```
 
+Para rodar este algoritmo, insira o seguinte comando em um terminal:
+
+```bash
+py csv_preparation.py
+```
+
+que também gerará como saída uma mensagem exibindo uma amostra das tabelas exportadas para .CSV.
+
+Dessa forma, os dados estão prontos para as próximas etapas.
+
+
+### **Geração da árvore de decisão**
+
+> Devido à utilização de *machine learning* com a bilioteca *Scikit-learn*, a geração de árvores de decisão pode variar ligeiramente, dependendo da complexidade do *chatbot* a ser desenvolvido.
+> No caso em questão, todas as execuções do arquivo **csv_preparation.py** resultarem em árvores um pouco diferentes umas das outras.
+**Faça as alterações necessárias ao arquivo .DOT, caso queira construir um *chatbot* a partir de uma árvore de decisão completamente nova.**
+
+Após um processamento inicial dos dados das vendas de casas do Condado de King, agora volta-se para o arquivo [chatbot_maker.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_maker.py).
+
+Nele é carregada a tabela sem as últimas 10 linhas de casas:
+
+```py
+train = pd.read_csv('CasasTop.csv')
+```
+
+São selecionadas, então, as colunas que deseja-se manter para a construção da árvore de decisão:
+
+```py
+keep_elements = ['bedrooms', 'bathrooms', 'floors', 'waterfront',
+                'view', 'condition', 'grade', 'Caro??']
+train = train[keep_elements]
+```
+
+Para definir quais colunas manter para elaboração da árvore, devem ser calculados os valores *gini* para cada coluna da tabela, para assim poder obter uma noção melhor de quais são mais favoráveis.
+
+É usada, então, a biblioteca de funções **Scikit-learn**, por intermédio do seu módulo **tree**, para criar a árvore de decisão em função da coluna **'Caro??'**:
+
+```py
+y_train = train['Caro??']
+x_train = train.drop(['Caro??'], axis=1).values
+decision_tree = tree.DecisionTreeClassifier(max_depth = 20)
+decision_tree.fit(x_train, y_train)
+```
+
+A variável **decision_tree** possuirá todos os dados a respeito da árvore de decisão gerada. Após isso, a árvore será exportada para o formato .DOT, com nome [**tree_chatbot.dot**](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.dot). 
+O trecho responsável por essa exportação é:
+
+```py
+with open("tree_chatbot.dot", 'w') as f:
+     f = tree.export_graphviz(decision_tree,
+                              out_file=f,
+                              max_depth = 20,
+                              impurity = True,
+                              feature_names = list(train.drop(['Caro??'], axis=1)),
+                              class_names = ['False', 'True'],
+                              rounded = True,
+                              filled= True )
+```
+
+Com o arquivo .DOT do fluxograma da árvore de decisão definido, pode-se seguir para as próximas etapas da elaboração do *chatbot*.
 
 ## **Como rodar o chatbot**
 
