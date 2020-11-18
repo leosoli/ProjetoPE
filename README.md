@@ -85,7 +85,7 @@ Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de 
 #### **ZIP CODE 98055**
 </div>
 
-<!--
+
 
 <div align="center">
 
@@ -95,7 +95,7 @@ Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de 
 
 </div>
 
--->
+
 
 <br />
 
@@ -182,8 +182,8 @@ autoavaliacao.to_csv(r'autoavaliacao.csv', index=False)
 
 Para rodar este algoritmo, insira o seguinte comando em um terminal:
 
-```bash
-py csv_preparation.py
+```console
+foo@bar:~$ py csv_preparation.py
 ```
 
 que também gerará como saída uma mensagem exibindo uma amostra das tabelas exportadas para .CSV.
@@ -288,19 +288,20 @@ Com o arquivo
 
 Para executar o *chatbot*, primeiramente, escolha um diretório local em seu computador. Abra o terminal e execute:
 
- ```bash
-git clone https://github.com/guigasalim/ProjetoPE.git
+ ```console
+foo@bar:~$ git clone https://github.com/guigasalim/ProjetoPE.git
 cd ProjetoPE
  ```
 
 Após isso, basta digitar o comando a seguir para iniciar o *chatbot*:
 
-```bash
-py chatbot_maker.py
+```console
+foo@bar:~$ py chatbot_maker.py
 ```
 ou
-```bash
-python chatbot_maker.py
+
+```console
+foo@bar:~$ python chatbot_maker.py
 ```
 
 Será exibida a seguinte mensagem:
