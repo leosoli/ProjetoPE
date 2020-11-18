@@ -256,9 +256,17 @@ edge [fontname=helvetica] ;
 ...
 ```
 
-| [<img src="https://github.com/guigasalim/ProjetoPE/blob/main/arvore.png?raw=true" alt="arvore-png"/>](https://github.com/guigasalim/ProjetoPE/blob/main/arvore.png) |
+| [<img src="https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png?raw=true" alt="tree-chatbot-png"/>](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png) |
 |:---:|
 | Imagem da árvore de decisão obtida. |
+
+A imagem da árvore de decisão acima foi obtida usando o [**Graphviz**](https://graphviz.org/), um software de código aberto para visualização de diagramas.
+
+Para gerar esta imagem a partir do arquivo **tree_chatbot.dot**, é necessário instalar o Graphviz e rodar o seguinte comando no terminal (após adicionar o caminho do diretório **bin** da raiz do Graphviz para o PATH):
+
+```console
+foo@bar:~$ dot -Tpng tree_chatbot.dot -o tree_chatbot.png
+```
 
 <br />
 
