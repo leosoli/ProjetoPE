@@ -1,5 +1,17 @@
 # **Projeto Programação Estruturada**
 
+
+### **Integrantes:**
+- Guilherme Melro Salim
+[<img src="https://img.shields.io/badge/Guilherme-GitHub-black" alt="github-Salim" width="90px"/>][github-Salim]
+- Leonardo de Souza Oliveira
+[<img src="https://img.shields.io/badge/Leonardo-GitHub-black" alt="github-Leo" width="90px"/>][github-Leo]
+- Saulo Jacção Rosa
+[<img src="https://img.shields.io/badge/Saulo-GitHub-black" alt="github-Saulo" width="80px"/>][github-Saulo]
+
+<br />
+
+
 Este projeto consiste na criação de um *chatbot* para predição das chances de um domicílio do condado de King (*King County*), WA, EUA, ser mais caro ou mais barato do que o valor médio dos preços das casas dessa região. A implementação poderia ser realizada para toda a cidade, porém, o foco deste projeto será nas residências que possuem *ZIP Code* **98055**.
 
 <br />
@@ -9,6 +21,7 @@ Este projeto consiste na criação de um *chatbot* para predição das chances d
 <br />
 
 - [**Projeto Programação Estruturada**](#projeto-programação-estruturada)
+    - [**Integrantes:**](#integrantes)
   - [**Visão geral do projeto**](#visão-geral-do-projeto)
     - [**Localização de estudo**](#localização-de-estudo)
       - [**CONDADO DE KING (*KING COUNTY*), WA, EUA**](#condado-de-king-king-county-wa-eua)
@@ -94,6 +107,7 @@ Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de 
 | Em destaque, localização da região incorporada ao ZIP Code 98055 |
 
 </div>
+
 
 
 
@@ -256,9 +270,13 @@ edge [fontname=helvetica] ;
 ...
 ```
 
+
+
 | [<img src="https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png?raw=true" alt="tree-chatbot-png"/>](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png) |
 |:---:|
 | Imagem da árvore de decisão obtida. |
+
+
 
 A imagem da árvore de decisão acima foi obtida usando o [**Graphviz**](https://graphviz.org/), um software de código aberto para visualização de diagramas.
 
@@ -290,7 +308,7 @@ Para executar o *chatbot*, primeiramente, escolha um diretório local em seu com
 
  ```console
 foo@bar:~$ git clone https://github.com/guigasalim/ProjetoPE.git
-cd ProjetoPE
+foo@bar:~$ cd ProjetoPE
  ```
 
 Após isso, basta digitar o comando a seguir para iniciar o *chatbot*:
@@ -334,3 +352,10 @@ A seguir, o *chatbot* é reiniciado, sendo possível encerrar sua execução a q
 ```bash
 0 para sair
 ```
+
+
+---
+
+[github-Leo]: https://github.com/leosoli
+[github-Salim]: https://github.com/guigasalim
+[github-Saulo]: https://github.com/SauloJRosa
