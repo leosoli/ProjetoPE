@@ -290,8 +290,125 @@ foo@bar:~$ dot -Tpng tree_chatbot.dot -o tree_chatbot.png
 
 ### **Implementação do chatbot**
 
-Com o arquivo 
+Com o arquivo [**tree_chatbot.png**](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png), referente à árvore de decisão, obtido anteriormente, pode-se seguir para a implementação em si do *chatbot*. Para isto, primeiramente, deve ser criado um arquivo chamado **arvore.csv**, que possui a seguinte estrutura:
 
+```csv
+ID;Pergunta;A;Nó A;B;Nó B
+1;<PERGUNTA>;Sim;<PRÓXIMO NÓ DO SIM>;Não;<PRÓXIMO NÓ DO NÃO>
+2;<PERGUNTA>;Sim;<PRÓXIMO NÓ DO SIM>;Não;<PRÓXIMO NÓ DO NÃO>
+...
+```
+Para o caso de um nó ser considerado um **nó folha**, a linha correspondente a esse nó deverá ser, por exemplo:
+
+```csv
+16;NÓ FOLHA;Altas Chances de Ser Caro;;;
+```
+
+Com o arquivo **arvore.csv** completo, a próxima etapa inclui o algoritmo que recebe ele para executar o *chatbot*.
+O programa [**chatbot_maker.py**](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_maker.py) é encarregado de cumprir essa missão.
+
+Como mencionado anteriormente, **chatbot_maker.py** foi desenvolvido por **Vinícius dos Santos Ribeiro** e inicia-se como mostrado a seguir:
+
+
+  - É definida a classe da nossa árvore binaria de decisão, onde a mesma é ligada a outras 2 versões dela definidas como seus nós. Cada árvore abrigará uma pergunta que será mostrada ao usuário para ser respondida.
+
+  - A árvore recebe essa resposta, checa se foi 'True' (1) ou 'False' (2) e percorre seus nós dependendo dessa resposta através da função **check_answer()**. Neste caso, irá para o nó da esquerda, se for 'True', e para o lado oposto, caso for 'False' .
+
+```py
+class Tree():
+    def __init__(self):
+        pass
+
+    def ask_question(self):
+        return self.question
+
+    def check_answer(self,answer):
+        if answer == self.answerTrue:
+            return self.leftNode
+        elif answer == self.answerFalse:
+            return self.rightNode
+        else:
+            return False
+```
+
+No trecho a seguir, o arquivo **arvore.csv** é lido e a função **rec_build_tree()** é implementada. Essa função é definida da seguinte maneira:
+  - Uma nova sub-árvore é criada;
+  - A resposta é redirecionada para para o nó esquerdo ou direito, ambos gerando recursivamente novas sub-árvores, onde o nó esquerdo é definido por A até encontrar um nó onde a coluna 'Pergunta' for declarada “NÓ FOLHA”;
+  -  Esse nó é devolvido ao usuário.
+
+```py
+texto = pd.read_csv("arvore.csv",sep=';',index_col="ID")
+
+def rec_build_tree(linha):
+    row = texto.loc[linha]
+    if row["Pergunta"] == "NÓ FOLHA":
+        return row["A"]
+    node = Tree() 
+    node.leftNode = rec_build_tree(int(row["Nó A"]))    
+    node.rightNode = rec_build_tree(int(row["Nó B"]))
+    node.question = row["Pergunta"]
+    node.answerTrue = row["A"]
+    node.answerFalse = row["B"]
+    return node
+```
+
+O trecho abaixo exibirá em nosso terminal a árvore baseando-se nas perguntas definidas em **arvore.csv**. Esse processo é executado através de um *loop*, que será quebrado somente quando o usuário **chegar a um nó folha** ou caso **cometa múltiplos erros**, esta última sendo uma condição encontrada quando o usuário não responde uma pergunta de acordo com as opções disponíveis:
+
+  0. Para finalizar o programa
+  1. Para responder Sim
+  2. Para responder Não
+
+```py
+while True:
+    arvore = rec_build_tree(1)
+    count_erros=0
+    while True:
+        if count_erros == 2:
+            print("ERROS SUCESSIVOS\nVERIFIQUE AS OPÇÕES ANTES DE TENTAR NOVAMENTE\n")
+            print("\nMuitas informações! :/ \nPor favor me reinicie.")
+            break
+        opcoes = {1:arvore.answerTrue,2:arvore.answerFalse}
+        print("\nEscolha uma das opções abaixo:"+"\n0 para sair"+"\n1 para "+opcoes[1]+"\n2 para "+opcoes[2]+"\n")
+        response = input(arvore.ask_question())
+        while (not response.isnumeric()) or (int(response) > 2):
+            if count_erros == 2:
+                    print("\nMuitas informações! :/ \nPor favor me reinicie.")
+                    sys.exit()
+            print("\nMe desculpe, não conheço essa opção, vamos tentar novamente? :)\n")
+            print("Escolha uma das opções abaixo:"+"\n0 para sair"+"\n1 para "+opcoes[1]+"\n2 para "+opcoes[2])
+            response = input(arvore.ask_question())
+            count_erros+=1
+```
+
+Por fim a parte final do *loop* anterior irá tomar a resposta escolhida, realizar uma última checagem para ver se ela é permitida, e prosseguirá para o próximo nó até encontrar um nó folha, cuja resposta será a obtida pelo *chatbot*.
+
+```py
+        if int(response) == 0:
+            print("\nFim.\n")
+            sys.exit()
+            S
+        question = opcoes[int(response)]
+        answer = arvore.check_answer(question)
+        if answer == False:
+            print("\nMe desculpe, não conheço essa opção, vamos tentar novamente? :)")
+            count_erros+=1
+        elif not is_obj(answer):
+            break
+        else:
+            arvore = answer 
+            
+    print(answer)
+                
+    print("-------------------------------------")
+```
+
+Antes de encerrar a busca, uma mensagem indicando a resposta obtida, dentre as soluções possíveis abaixo, será exibida.
+
+- Altas Chances de Ser Barato
+- Chances Medias de ser Barato
+- Chances de ser o preço do Mercado
+- Chances Medias de ser Caro
+- Altas Chances de Ser Caro
 
 <br />
 
