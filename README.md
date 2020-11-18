@@ -240,7 +240,7 @@ with open("tree_chatbot.dot", 'w') as f:
                               filled= True )
 ```
 
-Com o arquivo .DOT (10 primeiras linhas abaixo) do fluxograma da árvore de decisão definido, pode-se seguir para as próximas etapas da elaboração do *chatbot*.
+Com o arquivo .DOT (10 primeiras linhas abaixo) do fluxograma da árvore de decisão definido, pode-se gerar a imagem em formato .PNG resultante.
 
 ```
 digraph Tree {
@@ -256,9 +256,16 @@ edge [fontname=helvetica] ;
 ...
 ```
 
+| [<img src="https://github.com/guigasalim/ProjetoPE/blob/main/arvore.png?raw=true" alt="arvore-png"/>](https://github.com/guigasalim/ProjetoPE/blob/main/arvore.png) |
+|:---:|
+| Imagem da árvore de decisão obtida. |
+
 <br />
 
 ### **Implementação do chatbot**
+
+Com o arquivo 
+
 
 <br />
 
