@@ -15,11 +15,12 @@ Este projeto consiste na criação de um *chatbot* para predição das chances d
       - [**RENTON, CONDADO DE KING**](#renton-condado-de-king)
       - [**ZIP CODE 98055**](#zip-code-98055)
     - [**Banco de dados das casas do condado de King, WA, EUA**](#banco-de-dados-das-casas-do-condado-de-king-wa-eua)
-    - [**Bilioteca Scikit-learn em Python para criação de árvores de decisão**](#bilioteca-scikit-learn-em-python-para-criação-de-árvores-de-decisão)
-    - [**Implementação do chatbot a partir de uma árvore de decisão**](#implementação-do-chatbot-a-partir-de-uma-árvore-de-decisão)
+    - [**Biblioteca Scikit-learn em Python para criação de árvores de decisão**](#biblioteca-scikit-learn-em-python-para-criação-de-árvores-de-decisão)
+    - [**Chatbot a partir de uma árvore de decisão**](#chatbot-a-partir-de-uma-árvore-de-decisão)
   - [**Descrição da implementação**](#descrição-da-implementação)
     - [**Preparação do banco de dados**](#preparação-do-banco-de-dados)
     - [**Geração da árvore de decisão**](#geração-da-árvore-de-decisão)
+    - [**Implementação do chatbot**](#implementação-do-chatbot)
   - [**Como rodar o chatbot**](#como-rodar-o-chatbot)
 
 <br />
@@ -35,8 +36,8 @@ Para a criação do *chatbot*, é necessário obter uma árvore de decisão a pa
 No geral, podemos definir os seguintes pontos importantes para o desenvolvimento deste projeto:
 
 - Banco de dados das casas do condado de King, WA, EUA
-- Bilioteca Scikit-learn em Python para criação de árvores de decisão
-- Implementação do *chatbot* a partir de uma árvore de decisão
+- Biblioteca Scikit-learn em Python para criação de árvores de decisão
+- Chatbot a partir de uma árvore de decisão
 
 <br />
 
@@ -84,7 +85,7 @@ Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de 
 #### **ZIP CODE 98055**
 </div>
 
-
+<!--
 
 <div align="center">
 
@@ -94,7 +95,7 @@ Renton é uma cidade do Condado de King, Washington, e considerada subúrbio de 
 
 </div>
 
-
+-->
 
 <br />
 
@@ -104,7 +105,7 @@ Para a construção do *chatbot*, foi utilizado um banco de dados de preços de 
 
 <br />
 
-### **Bilioteca Scikit-learn em Python para criação de árvores de decisão**
+### **Biblioteca Scikit-learn em Python para criação de árvores de decisão**
 
 *Scikit-learn* é um módulo de Python que integra uma ampla gama de algoritmos de aprendizado de máquina de última geração para problemas supervisionados e não supervisionados de média escala. Este pacote se concentra em levar o aprendizado de máquina para não especialistas usando uma linguagem de alto nível de uso geral. O código-fonte, os binários e a documentação podem ser baixados em http://scikit-learn.sourceforge.net.
 
@@ -112,7 +113,7 @@ O módulo [sklearn.tree](https://scikit-learn.org/stable/modules/classes.html?hi
 
 <br />
 
-### **Implementação do chatbot a partir de uma árvore de decisão**
+### **Chatbot a partir de uma árvore de decisão**
 
 O algoritmo para implementação do chatbot a partir da estrutura de uma árvore de decisão foi disponibilizado pelo **Profº Mario Alexandre Gazziro** (CECS-UFABC), mas originalmente desenvolvido pelo aluno **Vinícius dos Santos Ribeiro**.
 
@@ -197,7 +198,7 @@ Dessa forma, os dados estão prontos para as próximas etapas.
 > No caso em questão, todas as execuções do arquivo **csv_preparation.py** resultarem em árvores um pouco diferentes umas das outras.
 **Faça as alterações necessárias ao arquivo .DOT, caso queira construir um *chatbot* a partir de uma árvore de decisão completamente nova.**
 
-Após um processamento inicial dos dados das vendas de casas do Condado de King, agora volta-se para o arquivo [chatbot_maker.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_maker.py).
+Após um processamento inicial dos dados das vendas de casas do Condado de King, agora volta-se para o arquivo [chatbot_sklearn.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_sklearn.py).
 
 Nele é carregada a tabela sem as últimas 10 linhas de casas:
 
@@ -254,6 +255,10 @@ edge [fontname=helvetica] ;
 2 -> 3 ;
 ...
 ```
+
+<br />
+
+### **Implementação do chatbot**
 
 <br />
 
