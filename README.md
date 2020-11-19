@@ -129,7 +129,7 @@ O módulo [sklearn.tree](https://scikit-learn.org/stable/modules/classes.html?hi
 
 ### **Chatbot a partir de uma árvore de decisão**
 
-O algoritmo para implementação do chatbot a partir da estrutura de uma árvore de decisão foi disponibilizado pelo **Profº Mario Alexandre Gazziro** (CECS-UFABC), mas originalmente desenvolvido pelo aluno **Vinícius dos Santos Ribeiro**.
+O algoritmo para implementação do chatbot a partir da estrutura de uma árvore de decisão foi disponibilizado pelo **Profº Mario Alexandre Gazziro** (CECS-UFABC), originalmente desenvolvido pelo aluno **Vinícius dos Santos Ribeiro**.
 
 A versão modificada para o trabalho presente encontra-se neste repositório, sob o nome de [chatbot_maker.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_maker.py).
 
@@ -209,7 +209,7 @@ Dessa forma, os dados estão prontos para as próximas etapas.
 ### **Geração da árvore de decisão**
 
 > Devido à utilização de *machine learning* com a bilioteca *Scikit-learn*, a geração de árvores de decisão pode variar ligeiramente, dependendo da complexidade do *chatbot* a ser desenvolvido.
-> No caso em questão, todas as execuções do arquivo **csv_preparation.py** resultarem em árvores um pouco diferentes umas das outras.
+> No caso em questão, todas as execuções do arquivo **csv_preparation.py** resultam em árvores um pouco diferentes umas das outras.
 **Faça as alterações necessárias ao arquivo .DOT, caso queira construir um *chatbot* a partir de uma árvore de decisão completamente nova.**
 
 Após um processamento inicial dos dados das vendas de casas do Condado de King, agora volta-se para o arquivo [chatbot_sklearn.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_sklearn.py).
