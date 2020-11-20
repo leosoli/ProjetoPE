@@ -458,11 +458,11 @@ Altas Chances de Ser Caro
 
 que pode ser do tipo:
 
-- Altas Chances de Ser Barato
-- Chances Medias de ser Barato
-- Chances de ser o preço do Mercado
-- Chances Medias de ser Caro
-- Altas Chances de Ser Caro
+- <span style="color: green;">Altas Chances de Ser Barato</span>
+- <span style="color: #99ffbb;">Chances Medias de ser Barato</span>
+- <span style="color: white;">Chances de ser o preço do Mercado</span>
+- <span style="color: #ff9999;">Chances Medias de ser Caro</span>
+- <span style="color: red;">Altas Chances de Ser Caro</span>
 
 A seguir, o *chatbot* é reiniciado, sendo possível encerrar sua execução a qualquer momento usando a opção:
 
