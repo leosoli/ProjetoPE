@@ -131,7 +131,7 @@ O módulo [sklearn.tree](https://scikit-learn.org/stable/modules/classes.html?hi
 
 O algoritmo para implementação do chatbot a partir da estrutura de uma árvore de decisão foi disponibilizado pelo **Profº Mario Alexandre Gazziro** (CECS-UFABC), originalmente desenvolvido pelo aluno **Vinícius dos Santos Ribeiro**.
 
-A versão modificada para o trabalho presente encontra-se neste repositório, sob o nome de [chatbot_maker.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_maker.py).
+A versão modificada para o trabalho presente encontra-se neste repositório, sob o nome de [chatbot_maker.py](https://github.com/leosoli/ProjetoPE/blob/main/chatbot_maker.py).
 
 <br />
 
@@ -141,13 +141,13 @@ A versão modificada para o trabalho presente encontra-se neste repositório, so
 
 ## **Descrição da implementação**
 > A descrição a seguir demonstra os passos para desenvolver uma árvore de decisão capaz de prever a informação sobre se a casa escolhida possui preço acima ou abaixo do valor médio. O uso da biblioteca **Scikit-learn** promove ligeiras variações na árvore de decisão gerada de acordo com a complexidade da mesma. O usuário não deve desprezar essa discrepância caso deseje criar uma nova árvore de decisão.
-> O arquivo [arvore.csv](https://github.com/guigasalim/ProjetoPE/blob/main/arvore.csv) deve ser modificado levando em conta as alterações promovidas ao arquivo [tree_chatbot.dot](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.dot).
+> O arquivo [arvore.csv](https://github.com/leosoli/ProjetoPE/blob/main/arvore.csv) deve ser modificado levando em conta as alterações promovidas ao arquivo [tree_chatbot.dot](https://github.com/leosoli/ProjetoPE/blob/main/tree_chatbot.dot).
 
 <br />
 
 ### **Preparação do banco de dados**
 
-No arquivo [csv_preparation.py](https://github.com/guigasalim/ProjetoPE/blob/main/csv_preparation.py), inicia-se a preparação do arquivo de entrada para a geração da árvore de decisão a partir do script a seguir:
+No arquivo [csv_preparation.py](https://github.com/leosoli/ProjetoPE/blob/main/csv_preparation.py), inicia-se a preparação do arquivo de entrada para a geração da árvore de decisão a partir do script a seguir:
 
 ```py
 data = pd.read_csv('kc_house_data.csv', sep=',')
@@ -212,7 +212,7 @@ Dessa forma, os dados estão prontos para as próximas etapas.
 > No caso em questão, todas as execuções do arquivo **csv_preparation.py** resultam em árvores um pouco diferentes umas das outras.
 **Faça as alterações necessárias ao arquivo .DOT, caso queira construir um *chatbot* a partir de uma árvore de decisão completamente nova.**
 
-Após um processamento inicial dos dados das vendas de casas do Condado de King, agora volta-se para o arquivo [chatbot_sklearn.py](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_sklearn.py).
+Após um processamento inicial dos dados das vendas de casas do Condado de King, agora volta-se para o arquivo [chatbot_sklearn.py](https://github.com/leosoli/ProjetoPE/blob/main/chatbot_sklearn.py).
 
 Nele é carregada a tabela sem as últimas 10 linhas de casas:
 
@@ -239,7 +239,7 @@ decision_tree = tree.DecisionTreeClassifier(max_depth = 20)
 decision_tree.fit(x_train, y_train)
 ```
 
-A variável **decision_tree** possuirá todos os dados a respeito da árvore de decisão gerada. Após isso, a árvore será exportada para o formato .DOT, com nome [**tree_chatbot.dot**](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.dot). 
+A variável **decision_tree** possuirá todos os dados a respeito da árvore de decisão gerada. Após isso, a árvore será exportada para o formato .DOT, com nome [**tree_chatbot.dot**](https://github.com/leosoli/ProjetoPE/blob/main/tree_chatbot.dot). 
 O trecho responsável por essa exportação é:
 
 ```py
@@ -272,7 +272,7 @@ edge [fontname=helvetica] ;
 
 
 
-| [<img src="https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png?raw=true" alt="tree-chatbot-png"/>](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png) |
+| [<img src="https://github.com/leosoli/ProjetoPE/blob/main/tree_chatbot.png?raw=true" alt="tree-chatbot-png"/>](https://github.com/leosoli/ProjetoPE/blob/main/tree_chatbot.png) |
 |:---:|
 | Imagem da árvore de decisão obtida. |
 
@@ -290,7 +290,7 @@ foo@bar:~$ dot -Tpng tree_chatbot.dot -o tree_chatbot.png
 
 ### **Implementação do chatbot**
 
-Com o arquivo [**tree_chatbot.png**](https://github.com/guigasalim/ProjetoPE/blob/main/tree_chatbot.png), referente à árvore de decisão, obtido anteriormente, pode-se seguir para a implementação em si do *chatbot*. Para isto, primeiramente, deve ser criado um arquivo chamado **arvore.csv**, que possui a seguinte estrutura:
+Com o arquivo [**tree_chatbot.png**](https://github.com/leosoli/ProjetoPE/blob/main/tree_chatbot.png), referente à árvore de decisão, obtido anteriormente, pode-se seguir para a implementação em si do *chatbot*. Para isto, primeiramente, deve ser criado um arquivo chamado **arvore.csv**, que possui a seguinte estrutura:
 
 ```csv
 ID;Pergunta;A;Nó A;B;Nó B
@@ -305,7 +305,7 @@ Para o caso de um nó ser considerado um **nó folha**, a linha correspondente a
 ```
 
 Com o arquivo **arvore.csv** completo, a próxima etapa inclui o algoritmo que recebe ele para executar o *chatbot*.
-O programa [**chatbot_maker.py**](https://github.com/guigasalim/ProjetoPE/blob/main/chatbot_maker.py) é encarregado de cumprir essa missão.
+O programa [**chatbot_maker.py**](https://github.com/leosoli/ProjetoPE/blob/main/chatbot_maker.py) é encarregado de cumprir essa missão.
 
 Como mencionado anteriormente, **chatbot_maker.py** foi desenvolvido por **Vinícius dos Santos Ribeiro** e inicia-se como mostrado a seguir:
 
@@ -424,7 +424,7 @@ Antes de encerrar a busca, uma mensagem indicando a resposta obtida, dentre as s
 Para executar o *chatbot*, primeiramente, escolha um diretório local em seu computador. Abra o terminal e execute:
 
  ```console
-foo@bar:~$ git clone https://github.com/guigasalim/ProjetoPE.git
+foo@bar:~$ git clone https://github.com/leosoli/ProjetoPE.git
 foo@bar:~$ cd ProjetoPE
  ```
 
